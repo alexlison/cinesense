@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Movie Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <style>
+    body {
+      background-color: #000000;
+      color: #ffffff;
+    }
+    .sidebar {
+      background-color: #1a001a;
+    }
+    .nav-link {
+      color: #ffffff;
+    }
+    .nav-link.active, .nav-link:hover {
+      background-color: #a020f0;
+      color: #ffffff !important;
+    }
+    .section-title {
+      color: #a020f0;
+    }
+    .icon-btn {
+      background: none;
+      border: none;
+      color: #a020f0;
+      font-size: 2rem;
+      margin-right: 1rem;
+    }
+    .icon-btn:hover {
+      color: #e066ff;
+    }
+
+    /* Logout button on the right side */
+    .right-buttons {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .right-buttons button {
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: #a020f0;
+    }
+    .right-buttons button:hover {
+      color: #e066ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row min-vh-100">
+      <!-- Sidebar -->
+      <nav class="col-md-3 col-lg-2 d-md-block sidebar py-4 shadow">
+        <div class="text-center mb-4">
+          <h2 style="color:#a020f0;">Admin Panel</h2>
+        </div>
+        <ul class="nav flex-column">
+          <li class="nav-item mb-2">
+            <a class="nav-link active" href="#">
+              🎬 Movies
+            </a>
+          </li>
+          <li class="nav-item mb-2">
+            <a class="nav-link" href="#">
+              👥 Customers
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Main content -->
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-5">
+        <h1 class="h2 mb-4 section-title">Manage Movies</h1>
+
+        <div class="mb-4">
+          <button class="icon-btn" title="Add Movie">
+            <i class="bi bi-plus-lg"></i>
+          </button>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Right Side Logout Button -->
+  <div class="right-buttons">
+    <button class="icon-btn" title="Logout">
+      <i class="bi bi-box-arrow-right"></i>
+    </button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
