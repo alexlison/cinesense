@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineSense - Movie Recommendations</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo" style="display:flex;align-items:center;gap:18px;">
+  <svg width="72" height="72" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;">
+    <defs>
+      <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#fff" stop-opacity="0.8"/>
+        <stop offset="70%" stop-color="#e50914" stop-opacity="0.85"/>
+        <stop offset="100%" stop-color="#181818" stop-opacity="1"/>
+      </radialGradient>
+      <linearGradient id="film" x1="0" y1="0" x2="90" y2="90" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#e50914"/>
+        <stop offset="1" stop-color="#ff6f61"/>
+      </linearGradient>
+    </defs>
+    <circle cx="45" cy="45" r="42" fill="url(#glow)"/>
+    <rect x="22" y="32" width="46" height="26" rx="9" fill="url(#film)" stroke="#fff" stroke-width="3"/>
+    <circle cx="35" cy="45" r="6" fill="#fff" fill-opacity="0.88"/>
+    <circle cx="55" cy="45" r="6" fill="#fff" fill-opacity="0.88"/>
+    <polygon points="45,38 60,45 45,52" fill="#fff" fill-opacity="0.95"/>
+  </svg>
+  <span style="font-weight:900;font-size:2.8rem;letter-spacing:3px;background: linear-gradient(90deg,#e50914 30%,#ff6f61 70%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">CineSense</span>
+</div>
+        <nav>
+            <ul>
+              <br></br>
+                <li><a href="#trending">Trending</a></li>
+                <li><a href="#top-rated">Top Rated</a></li>
+                <li><a href="#new-releases">New Releases</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search movies...">
+            <button>🔍</button>
+        </div>
+        <button class="profile-btn" aria-label="Profile" id="profileDropdownBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" height="28" width="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-2.21 3.58-4 8-4s8 1.79 8 4"/></svg>
+        </button>
+        <div class="dropdown-menu" id="profileDropdownMenu">
+            <a href="#" class="dropdown-item">Your Profile</a>
+            <a href="#" class="dropdown-item">Logout</a>
+        </div>
+    </header>
+    <section class="banner">
+        <div class="banner-content">
+            <h1>Discover Your Next Favorite Movie</h1>
+            <p>Personalized recommendations, trending titles, and more!</p>
+        </div>
+    </section>
+    <main>
+        <!-- Movie Poster Carousel -->
+        <section class="carousel-section">
+            <div class="carousel-container">
+                <img class="carousel-poster side-poster" id="carouselPrevPoster" src="https://image.tmdb.org/t/p/w780/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg" alt="Previous Poster">
+                <img class="carousel-poster main-poster" id="carouselPoster" src="https://image.tmdb.org/t/p/w780/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg" alt="Featured Movie Poster">
+                <img class="carousel-poster side-poster" id="carouselNextPoster" src="https://image.tmdb.org/t/p/w780/6agKYU5IQFpuDyUYPu39w7UCRrJ.jpg" alt="Next Poster">
+            </div>
+        </section>
+        <section id="trending" class="movie-section">
+            <h2>Trending Now</h2>
+            <div class="movie-row">
+                <div class="movie-card"><img src="https://image.tmdb.org/t/p/w300/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg" alt="Trending"><span>View More</span></div>
+                <div class="movie-card"><img src="https://image.tmdb.org/t/p/w300/6agKYU5IQFpuDyUYPu39w7UCRrJ.jpg" alt="Trending"><span>View More</span></div>
+                <div class="movie-card"><img src="https://image.tmdb.org/t/p/w300/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg" alt="Trending"><span>View More</span></div>
+                <div class="movie-card"><img src="https://image.tmdb.org/t/p/w300/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg" alt="Trending"><span>View More</span></div>
+            </div>
+        </section>
+        <section id="top-rated" class="movie-section">
+            <h2>Top Rated</h2>
+            <div class="movie-row">
+                <div class="movie-card"><img src="https://image.tmdb.org/t/p/w300/q719jXXEzOoYaps6babgKnONONX.jpg" alt="Top Rated"><span>View More</span></div>
+                <div class="movie-card"><img src="https://image.tmdb.org/t/p/w300/riYInlsq2kf1AWoGm80JQW5dLKp.jpg" alt="Top Rated"><span>View More</span></div>
+                <div class="movie-card"><img src="https://image.tmdb.org/t/p/w300/2CAL2433ZeIihfX1Hb2139CX0pW.jpg" alt="Top Rated"><span>View More</span></div>
+                <div class="movie-card"><img src="https://image.tmdb.org/t/p/w300/velWPhVMQeQKcxggNEU8YmIo52R.jpg" alt="Top Rated"><span>View More</span></div>
+            </div>
+        </section>
+        <section id="new-releases" class="movie-section">
+            <h2>New Releases</h2>
+            <div class="movie-row">
+                <div class="movie-card"><img src="https://image.tmdb.org/t/p/w300/4ZocdxnOO6q2UbdKye2wgofLFhB.jpg" alt="New Releases"><span>View More</span></div>
+                <div class="movie-card"><img src="https://image.tmdb.org/t/p/w300/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg" alt="New Releases"><span>View More</span></div>
+                <div class="movie-card"><img src="https://image.tmdb.org/t/p/w300/q719jXXEzOoYaps6babgKnONONX.jpg" alt="New Releases"><span>View More</span></div>
+                <div class="movie-card"><img src="https://image.tmdb.org/t/p/w300/velWPhVMQeQKcxggNEU8YmIo52R.jpg"ch alt="New Releases"><span>View More</span></div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-brand">
+                <div style="display:flex;align-items:center;gap:18px;">
+  <svg width="72" height="72" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;">
+    <defs>
+      <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#fff" stop-opacity="0.8"/>
+        <stop offset="70%" stop-color="#e50914" stop-opacity="0.85"/>
+        <stop offset="100%" stop-color="#181818" stop-opacity="1"/>
+      </radialGradient>
+      <linearGradient id="film" x1="0" y1="0" x2="90" y2="90" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#e50914"/>
+        <stop offset="1" stop-color="#ff6f61"/>
+      </linearGradient>
+    </defs>
+    <circle cx="45" cy="45" r="42" fill="url(#glow)"/>
+    <rect x="22" y="32" width="46" height="26" rx="9" fill="url(#film)" stroke="#fff" stroke-width="3"/>
+    <circle cx="35" cy="45" r="6" fill="#fff" fill-opacity="0.88"/>
+    <circle cx="55" cy="45" r="6" fill="#fff" fill-opacity="0.88"/>
+    <polygon points="45,38 60,45 45,52" fill="#fff" fill-opacity="0.95"/>
+  </svg>
+  <span class="footer-title" style="font-weight:900;font-size:2.8rem;letter-spacing:3px;background: linear-gradient(90deg,#e50914 30%,#ff6f61 70%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">CineSense</span>
+</div>
+                <p class="footer-desc">Discover, explore, and track your favorite movies. Personalized recommendations powered by CineSense AI.</p>
+            </div>
+            <nav class="footer-links">
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#help">Help Center</a>
+                <a href="#careers">Careers</a>
+            </nav>
+            <div class="footer-social">
+                <a href="#" aria-label="Instagram" class="footer-social-icon">
+                    <svg width="24" height="24" fill="none" stroke="#5b5fc7" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17" cy="7" r="1.5"/></svg>
+                </a>
+                <a href="#" aria-label="Twitter" class="footer-social-icon">
+                    <svg width="24" height="24" fill="none" stroke="#5b5fc7" stroke-width="2" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53A4.48 4.48 0 0012 8v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c13 8 27 0 27-16a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+                </a>
+                <a href="#" aria-label="YouTube" class="footer-social-icon">
+                    <svg width="24" height="24" fill="none" stroke="#5b5fc7" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="10" rx="4"/><polygon points="10 9 15 12 10 15 10 9"/></svg>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>Powered by CineSense AI &bull; &copy; 2025 CineSense. All rights reserved.</span>
+        </div>
+    </footer>
+</body>
+<script>
+// Dropdown toggle logic
+const profileBtn = document.getElementById('profileDropdownBtn');
+const dropdownMenu = document.getElementById('profileDropdownMenu');
+document.addEventListener('click', function(e) {
+    if (profileBtn && profileBtn.contains(e.target)) {
+        dropdownMenu.classList.toggle('show');
+    } else if(dropdownMenu) {
+        dropdownMenu.classList.remove('show');
+    }
+});
+
+// Carousel logic with side previews
+const carouselPosters = [
+    'https://image.tmdb.org/t/p/w780/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg',
+    'https://image.tmdb.org/t/p/w780/6agKYU5IQFpuDyUYPu39w7UCRrJ.jpg',
+    'https://image.tmdb.org/t/p/w780/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg',
+    'https://image.tmdb.org/t/p/w780/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg'
+];
+let carouselIndex = 0;
+const mainPoster = document.getElementById('carouselPoster');
+const prevPoster = document.getElementById('carouselPrevPoster');
+const nextPoster = document.getElementById('carouselNextPoster');
+function updateCarouselPosters() {
+    const prevIndex = (carouselIndex - 1 + carouselPosters.length) % carouselPosters.length;
+    const nextIndex = (carouselIndex + 1) % carouselPosters.length;
+    mainPoster.src = carouselPosters[carouselIndex];
+    prevPoster.src = carouselPosters[prevIndex];
+    nextPoster.src = carouselPosters[nextIndex];
+}
+function cycleCarousel() {
+    carouselIndex = (carouselIndex + 1) % carouselPosters.length;
+    mainPoster.style.opacity = 0;
+    prevPoster.style.opacity = 0;
+    nextPoster.style.opacity = 0;
+    setTimeout(() => {
+        updateCarouselPosters();
+        mainPoster.style.opacity = 1;
+        prevPoster.style.opacity = 0.5;
+        nextPoster.style.opacity = 0.5;
+    }, 1200);
+    setTimeout(cycleCarousel, 5000);
+}
+// Initialize
+updateCarouselPosters();
+mainPoster.style.opacity = 1;
+prevPoster.style.opacity = 0.5;
+nextPoster.style.opacity = 0.5;
+setTimeout(cycleCarousel, 5000);
+</script>
+</html>
